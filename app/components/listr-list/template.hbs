@@ -1,4 +1,4 @@
-<h3>Title: {{list.title}}</h3>
+<h3 {{action 'toggleListDetail'}}>Title: {{list.title}}</h3>
 <ul>
   {{#each list.items as |item|}}
     <li>{{item.content}}</li>
