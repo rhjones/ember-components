@@ -1,16 +1,8 @@
 <div class="container">
 
   <h2>ListR</h2>
-
   {{#each model as |list|}}
-    <div>
-      <h3>Title: {{list.title}}</h3>
-      <ul>
-        {{#each list.items as |item|}}
-          <li>{{item.content}}</li>
-        {{/each}}
-      </ul>
-    </div>
+    {{listr-list list=list}}
   {{/each}}
 
 </div>
