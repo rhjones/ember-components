@@ -83,11 +83,11 @@ Now let's figure out how to render that.
 
 ```html
 <!-- index/template.hbs -->
-<div class="containter">
+<div class="container">
   <h2>ListR</h2>
 
   {{#each model as |list|}}
-    <div class="">
+    <div>
       <h3>Title: {{list.title}}</h3>
       <ul>
         {{#each list.items as |item|}}
@@ -122,9 +122,14 @@ our UI. Create a list item component and name it `listr-list/item`.
 
 Toggle display of list on header click.
 
+Let's explore Ember's [`classNameBindings`](https://guides.emberjs.com/v1.10.0/components/customizing-a-components-element/)
+and see if that can help us achieve this toggle.
+
 ## Lab: Toggle Strike-Through of a List Item
 
-Toggle strike-through of list item on item click.
+Create an action of `toggleProperty` that toggles a `classNameBindings` of
+`listItemCompleted`. This class should have a CSS style declaration that
+strikes through completed list items.
 
 ## Additional Resources
 
