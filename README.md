@@ -42,14 +42,81 @@ these visual elements "components".
 
 ![listr demo](https://cloud.githubusercontent.com/assets/388761/12339395/e809372a-bae2-11e5-8073-89bcee5a7351.png)
 
+## Code-Along: Create Listr Index Route
+
+We'll need to generate the application index route and create some list data.
+
+```js
+ember generate route index
+```
+
+```js
+//index/route.js
+import Ember from 'ember';
+
+ export default Ember.Route.extend({
+   model () {
+     return [
+       {
+         title: 'Favorites',
+         items: [
+           { content: 'Mountains' },
+           { content: 'Coffee' },
+           { content: 'Live music' },
+           { content: 'The spooky ghost emoji' },
+         ],
+       }, {
+         title: 'Todos',
+         items: [
+           { content: 'Practice Ember' },
+           { content: 'Move cross-country' },
+           { content: 'Get oil change' },
+           { content: 'Buy catnip' },
+         ],
+       },
+     ];
+   },
+ });
+```
+
+Now let's figure out how to render that.
+
+```html
+<!-- index/template.hbs -->
+<div class="containter">
+  <h2>ListR</h2>
+
+  {{#each model as |list|}}
+    <div class="">
+      <h3>Title: {{list.title}}</h3>
+      <ul>
+        {{#each list.items as |item|}}
+          <li>{{item.content}}</li>
+        {{/each}}
+      </ul>
+    </div>
+  {{/each}}
+</div>
+```
+
 ## Code-Along: Create a List Component
+
+Since the list is a visual component of our UI, we should actually pluck that
+out into an Ember component.
 
 Let's name it `listr-list` to follow best practices. We wouldn't want to clash
 with any new HTML elements in future specs!
 
+```js
+ember generate component listr-list
+```
+
+Now, we can move our previous markup to the `listr-list`'s template.js.
+
 ## Lab: Create a List Item Component
 
-Name it `listr-list/item`.
+Just like the list itself, each list item is an individual visual component of
+our UI. Create a list item component and name it `listr-list/item`.
 
 ## Code-Along: Toggle Display of a List
 
