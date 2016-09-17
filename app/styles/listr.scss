@@ -2,6 +2,14 @@
   display: none;
 }
 
+.list-header:hover, .list-item:hover {
+  cursor: pointer;
+}
+
+.list-item {
+  list-style: none;
+}
+
 .list-item-completed {
   text-decoration: line-through;
 }
