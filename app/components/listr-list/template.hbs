@@ -1,6 +1,6 @@
 <h3 {{action 'toggleListDetail'}}>{{list.title}}</h3>
 <ul>
   {{#each list.items as |item|}}
-    {{listr-list/item item=item}}
+    {{listr-list/item item=item testFunc='newFunc'}}
   {{/each}}
 </ul>

@@ -6,6 +6,9 @@ export default Ember.Component.extend({
   actions: {
     toggleListDetail() {
       return this.toggleProperty('listDetailHidden');
+    },
+    newFunc() {
+      console.log('got the testFunc action');
     }
   },
 });

@@ -7,6 +7,9 @@ export default Ember.Component.extend({
   actions: {
     toggleStrikeThrough() {
       return this.toggleProperty('listItemCompleted');
+    },
+    testFunc() {
+      return this.sendAction('testFunc');
     }
   },
 });
