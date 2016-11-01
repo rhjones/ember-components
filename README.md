@@ -44,7 +44,7 @@ these visual elements "components".
 
 ## Code-Along: Create Listr Index Route
 
-We'll need to generate the application index route and create some list data.
+We'll need to generate the application index route and template as a landing page.
 
 ```js
 ember generate route index
@@ -52,6 +52,32 @@ ember generate route index
 
 ```js
 //index/route.js
+import Ember from 'ember';
+
+ export default Ember.Route.extend({
+
+ });
+```
+
+NOTE: there is no model hook for the index route because we currently don't need to pull in any data on initial page load.
+
+
+```html
+<!-- lists/template.hbs -->
+<div class="container">
+  <h2>Welcome to listr!</h2>
+  {{#link-to 'lists'}}Check out the lists{{/link-to}}
+</div>
+```
+
+Next, we'll need to generate the application lists route and create some list data.
+
+```js
+ember generate route lists
+```
+
+```js
+//lists/route.js
 import Ember from 'ember';
 
  export default Ember.Route.extend({
@@ -79,10 +105,10 @@ import Ember from 'ember';
  });
 ```
 
-Now let's figure out how to render that.
+Now let's figure out how to render this new route.
 
 ```html
-<!-- index/template.hbs -->
+<!-- lists/template.hbs -->
 <div class="container">
   <h2>ListR</h2>
 
